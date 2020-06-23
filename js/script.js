@@ -1,4 +1,11 @@
 
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        gtag('config', 'UA-170093191-3');
+    
 /* slider buttons */
 $(function() {
     try {
