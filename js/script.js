@@ -15,19 +15,21 @@
 
 			var percent = parseInt(((h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight)) * 100);
 			
-			var URL = window.location.href;			
+			var pathname = window.location.href;			
+			var splitPath = pathname.split("/");
+			var page = splitPath[splitPath.length-1];
 			
+			console.log(page);
 			console.log(percent + "%");
-			console.log(URL);
 			
 			if (percent == 25) {
-				gtag("event", "scroll", { event_category: {{Page URL}}, event_label: "25%", value: 0, non_interaction: true });
+				gtag("event", "scroll", { event_category: page, event_label: "25%", value: 0, non_interaction: true });
 			} else if (percent == 50) {
-				gtag("event", "scroll", { event_category: {{Page URL}}, event_label: "50%", value: 0, non_interaction: true });
+				gtag("event", "scroll", { event_category: page, event_label: "50%", value: 0, non_interaction: true });
 			} else if (percent == 75) {
-				gtag("event", "scroll", { event_category: {{Page URL}}, event_label: "75%", value: 0, non_interaction: true });
+				gtag("event", "scroll", { event_category: page, event_label: "75%", value: 0, non_interaction: true });
 			} else if (percent == 95) {
-				gtag("event", "scroll", { event_category: {{Page URL}}, event_label: "95%", value: 0, non_interaction: true });
+				gtag("event", "scroll", { event_category: page, event_label: "95%", value: 0, non_interaction: true });
 			}
 		});
 	
