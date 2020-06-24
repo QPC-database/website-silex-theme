@@ -18,8 +18,12 @@
 				sh = "scrollHeight";
 
 			var percent = parseInt(((h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight)) * 100);
-
+			
+			var URL = window.location.href;			
+			
 			console.log(percent + "%");
+			console.log(URL);
+			
 			if (percent == 25) {
 				gtag("event", "scroll", { event_category: {{Page URL}}, event_label: "25%", value: 0, non_interaction: true });
 			} else if (percent == 50) {
