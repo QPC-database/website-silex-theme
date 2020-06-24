@@ -8,6 +8,29 @@
         
         gtag('config', 'UA-170093191-3');
     </script>
+	
+	<!-- Scroll tag - Google Analytics -->
+	<script>
+		document.addEventListener("scroll", function () {
+			var h = document.documentElement,
+				b = document.body,
+				st = "scrollTop",
+				sh = "scrollHeight";
+
+			var percent = parseInt(((h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight)) * 100);
+
+			console.log(percent + "%");
+			if (percent == 25) {
+				gtag("event", "scroll", { event_category: "{{Page URL}}", event_label: "25%", value: 0, non_interaction: true });
+			} else if (percent == 50) {
+				gtag("event", "scroll", { event_category: "{{Page URL}}", event_label: "50%", value: 0, non_interaction: true });
+			} else if (percent == 75) {
+				gtag("event", "scroll", { event_category: "{{Page URL}}", event_label: "75%", value: 0, non_interaction: true });
+			} else if (percent == 95) {
+				gtag("event", "scroll", { event_category: "{{Page URL}}", event_label: "95%", value: 0, non_interaction: true });
+			}
+		});
+	</script>
 
     <title>Ipsoom Center - Silex template</title>
     <meta charset="UTF-8">
@@ -198,7 +221,6 @@ $(function() {
                 <div class="silex-element-content normal">
 					<p><a 
 						href="#!page-home" class=""
-						<!-- Click tag - Google Analytics -->
 						onclick="gtag('event', 'click', {
 							'event_category': 'menu',
 							'event_label': 'home',
@@ -212,7 +234,6 @@ $(function() {
                 <div class="silex-element-content normal">
                     <p><a 
 						href="#!page-our-mission" class=""
-						<!-- Click tag - Google Analytics -->
 						onclick="gtag('event', 'click', {
 							'event_category': 'menu',
 							'event_label': 'our-mission',
@@ -224,7 +245,6 @@ $(function() {
             <div data-silex-type="text-element" class="editable-style text-element silex-id-1439554966975-57 nav-mark nav hide-on-mobile" data-silex-id="silex-id-1439554966975-57" style="">
                 <div class="silex-element-content normal">
 					<p><a href="#!page-news-press"
-						<!-- Click tag - Google Analytics -->
 						onclick="gtag('event', 'click', {
 							'event_category': 'menu',
 							'event_label': 'news-&-press',
@@ -237,7 +257,6 @@ $(function() {
             <div data-silex-type="text-element" class="editable-style text-element silex-id-1439554966767-55 nav-mark nav hide-on-mobile" data-silex-id="silex-id-1439554966767-55" style="">
                 <div class="silex-element-content normal">
 					<p><a href="#!page-how-to-help"
-						<!-- Click tag - Google Analytics -->
 						onclick="gtag('event', 'click', {
 							'event_category': 'menu',
 							'event_label': 'how-to-help',
@@ -250,7 +269,6 @@ $(function() {
             <div data-silex-type="text-element" class="editable-style text-element silex-id-1439554966563-53 nav-mark nav hide-on-mobile" data-silex-id="silex-id-1439554966563-53" style="">
                 <div class="silex-element-content normal">
 					<p><a href="#!page-contact" class=""
-						<!-- Click tag - Google Analytics -->
 						onclick="gtag('event', 'click', {
 							'event_category': 'menu',
 							'event_label': 'contact',
@@ -261,7 +279,6 @@ $(function() {
                 </div>
             </div>
             <div data-silex-type="image-element" class="editable-style silex-id-1490693355800-0 image-element" data-silex-id="silex-id-1490693355800-0" data-silex-href="#!page-home" style=""
-				<!-- Click tag - Google Analytics -->
 				onclick="gtag('event', 'click', {
 					'event_category': 'logo',
 					'event_label': '',
