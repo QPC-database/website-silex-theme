@@ -17,10 +17,10 @@
 			
 			var pathname = window.location.href;			
 			var splitPath = pathname.split("/");
-			var page = splitPath[splitPath.length-1];
+			var page = splitPath[splitPath.length-1].split(".")[0];
+			if(page == ''){var page = 'home'}
 			
-			console.log(page);
-			console.log(percent + "%");
+			console.log(page + ' - scroll ' + percent + "%");
 			
 			if (percent == 25) {
 				gtag("event", "scroll", { event_category: page, event_label: "25%", value: 0, non_interaction: true });
